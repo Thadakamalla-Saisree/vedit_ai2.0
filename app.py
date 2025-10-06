@@ -10,6 +10,8 @@ import os
 import re
 
 app = Flask(__name__)
+os.makedirs("static/uploads", exist_ok=True)
+os.makedirs("static/audio", exist_ok=True)
 app.secret_key = 'your_secret_key'
 app.config.from_object(Config)
 db.init_app(app)
@@ -64,6 +66,7 @@ def dashboard():
     if request.method == "POST" and "video" in request.files:
         video = request.files["video"]
         upload_path = os.path.join("static", "uploads", secure_filename(video.filename))
+        os.makedirs(os.path.dirname(upload_path), exist_ok=True)
         video.save(upload_path)
         video_path = "/" + upload_path.replace("\\", "/")
         session['video_path'] = video_path
