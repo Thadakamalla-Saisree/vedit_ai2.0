@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome to VEDIT</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome to VEDIT</h1>
+        <p style="text-align:center;">An AI-powered video editing platform with voice generation, chatbot assistance, and smart automation tools.</p>
+        <div style="text-align:center; margin-top:30px;">
+            <a href="{{ url_for('login') }}">🔐 Login</a> |
+            <a href="{{ url_for('register') }}">📝 Register</a>
+        </div>
+    </div>
+</body>
+
+</html>

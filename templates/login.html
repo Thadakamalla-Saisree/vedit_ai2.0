@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login | VEDIT</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome Back</h1>
+        <form method="POST">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p style="text-align:center; margin-top:15px;">
+            New here? <a href="{{ url_for('register') }}">Create an account</a>
+        </p>
+    </div>
+</body>
+
+</html>
