@@ -2,8 +2,11 @@ services:
   - type: web
     name: via-app
     env: python
-    buildCommand: ""
-    startCommand: python app.py
+    buildCommand: |
+      apt-get update
+      apt-get install -y imagemagick
+      pip install -r requirements.txt
+    startCommand: gunicorn app:app --timeout 600 --workers 1
     envVars:
       - key: FLASK_ENV
         value: production
