@@ -9,7 +9,7 @@ from moviepy.editor import (
 from moviepy.config import change_settings
 
 # Optional: If you're on Windows and using ImageMagick for captions
-change_settings({"IMAGEMAGICK_BINARY": "C:\\Program Files\\ImageMagick-7.1.2-Q16-HDRI\\magick.exe"})
+change_settings({"IMAGEMAGICK_BINARY": "/usr/bin/convert"})
 
 def trim_video(path, start, end, output_path):
     clip = VideoFileClip(path).subclip(start, end)
